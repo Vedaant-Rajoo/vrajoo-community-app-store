@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# umbrelOS remaps the compose mount ${UMBREL_ROOT}/data/storage/downloads to ${UMBREL_ROOT}/home/Downloads.
+# Without this, Docker creates the folder owned by root and BookOrbit can't write to it.
+BOOKORBIT_BOOKS_DIR="${UMBREL_ROOT}/home/Downloads/books"
+DESIRED_OWNER="1000:1000"
+
+mkdir -p "${BOOKORBIT_BOOKS_DIR}"
+
+if [[ "$(stat -c "%u:%g" "${BOOKORBIT_BOOKS_DIR}")" != "${DESIRED_OWNER}" ]]; then
+	chown "${DESIRED_OWNER}" "${BOOKORBIT_BOOKS_DIR}"
+fi

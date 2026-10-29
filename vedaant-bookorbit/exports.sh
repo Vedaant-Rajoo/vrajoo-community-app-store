@@ -4,3 +4,4 @@ export APP_VEDAANT_BOOKORBIT_PODCAST_ENCRYPTION_KEY=$(derive_entropy "${app_entr
 export APP_VEDAANT_BOOKORBIT_EMAIL_ENCRYPTION_KEY=$(derive_entropy "${app_entropy_identifier}-EMAIL_ENCRYPTION_KEY")
 export APP_VEDAANT_BOOKORBIT_MIGRATION_ENCRYPTION_KEY=$(derive_entropy "${app_entropy_identifier}-MIGRATION_ENCRYPTION_KEY")
 export APP_VEDAANT_BOOKORBIT_BOOK_REQUEST_ENCRYPTION_KEY=$(derive_entropy "${app_entropy_identifier}-BOOK_REQUEST_ENCRYPTION_KEY")
+
