@@ -1,5 +1,12 @@
 manifestVersion: 1
 id: vedaant-bookorbit
+folderAccess:
+  - id: umbrel-downloads:books
+    name: Books
+    note: Your ebook, comic and audiobook library. Available inside BookOrbit at /books. After changing this folder, run a library scan in BookOrbit so it picks up the new files.
+    mounts:
+      - service: app
+        targetPath: /books
 name: BookOrbit
 tagline: Your self-hosted library for ebooks, comics and audiobooks
 icon: https://raw.githubusercontent.com/bookorbit/bookorbit/main/docs/images/bookorbit-icon.png
@@ -17,6 +24,9 @@ description: >-
 
 
   Put your books in the "books" folder inside Downloads in the Files app. On first launch, use the app password shown by umbrelOS as the setup token.
+
+
+  You can point BookOrbit at a different books folder from the app's settings in umbrelOS. After changing it, open BookOrbit and run a library scan so it picks up the books in the new folder.
 developer: BookOrbit
 website: https://bookorbit.app
 submitter: Vedaant
