@@ -1,0 +1,38 @@
+manifestVersion: 1
+id: vedaant-bookorbit
+name: BookOrbit
+tagline: Your self-hosted library for ebooks, comics and audiobooks
+icon: https://raw.githubusercontent.com/bookorbit/bookorbit/main/docs/images/bookorbit-icon.png
+category: files
+version: "3.6.0"
+port: 6061
+description: >-
+  BookOrbit is a self-hosted library and reading platform for ebooks, PDFs, audiobooks, and comics. It is the successor to BookLore.
+
+
+  Read in the browser, on the official iPhone and Apple Watch apps, on Kobo devices, or in KOReader. Progress, highlights and reading status stay in sync everywhere.
+
+
+  Features include metadata from a dozen providers, reading statistics and achievements, OPDS and Send-to-Kindle, multi-user accounts with OIDC/SSO, and sync to Hardcover, Readwise and StoryGraph.
+
+
+  Put your books in the "books" folder inside Downloads in the Files app. On first launch, use the app password shown by umbrelOS as the setup token.
+developer: BookOrbit
+website: https://bookorbit.app
+submitter: Vedaant
+submission: https://github.com/Vedaant-Rajoo/vrajoo-community-app-store
+repo: https://github.com/bookorbit/bookorbit
+support: https://github.com/bookorbit/bookorbit/issues
+gallery:
+  - https://raw.githubusercontent.com/bookorbit/bookorbit/main/docs/images/dashboard-overview.png
+  - https://raw.githubusercontent.com/bookorbit/bookorbit/main/docs/images/ios-app-gallery.webp
+  - https://raw.githubusercontent.com/bookorbit/bookorbit/main/docs/images/koreader-plugin-preview.webp
+releaseNotes: >-
+  Adds first-class comic and manga series support, Read Aloud book creation, and audiobook chapter editing.
+
+
+  Full release notes can be found at https://github.com/bookorbit/bookorbit/releases/tag/v3.6.0
+dependencies: []
+path: ""
+defaultUsername: ""
+deterministicPassword: true

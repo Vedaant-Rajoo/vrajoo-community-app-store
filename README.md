@@ -1,17 +1,22 @@
-## Umbrel Community App Store Template
+# Vedaant's Umbrel App Store ☂️
 
-This repository is a template to create an Umbrel Community App Store. These additional app stores allow developers to distribute applications without submitting to the [Official Umbrel App Store](https://github.com/getumbrel/umbrel-apps).
+This is my personal Umbrel Community App Store with apps I like that aren't in the [official Umbrel App Store](https://github.com/getumbrel/umbrel-apps). It is maintained independently and is not affiliated with or supported by the Umbrel team.
 
-## How to use:
+## How to add this store
 
-1. Start by clicking the "Use this template" button located above.
-2. Assign an ID and name to your app store within the `umbrel-app-store.yml` file. This file specifies two important attributes:
-    - `id` - Acts as a unique prefix for every app within your Community App Store. You must start your application's ID with your app store's ID. For instance, in this template, the app store ID is `sparkles`, and there's an app named `hello world`. Consequently, the app's ID should be: `sparkles-hello-world`.
-    - `name` - This is the name of the Community App Store displayed in the umbrelOS UI.
-3. Change the name of the `sparkles-hello-world` folder to match your app's ID. The app ID is for you to decide. For example, if your app store ID is `whistles`, and your app is named My Video Downloader, you could set its app ID to `whistles-my-video-downloader`, and rename the folder accordingly.
-4. Next, enter your app's listing details in the `whistles-my-video-downloader/umbrel-app.yml`. These are displayed in the umbrelOS UI.
-5. Include the necessary Docker services in `whistles-my-video-downloader/docker-compose.yml`.
-6. That's it! Your Community App Store, featuring your unique app, is now set up and ready to go. To use your Community App Store, you can add its GitHub url the umbrelOS user interface as shown in the following demo:
+1. In umbrelOS, open the **App Store**.
+2. Click the **⋯** menu in the top right and choose **Community App Stores**.
+3. Paste `https://github.com/Vedaant-Rajoo/vrajoo-community-app-store` and click **Add**.
 
+### Currently available apps
 
-https://user-images.githubusercontent.com/10330103/197889452-e5cd7e96-3233-4a09-b475-94b754adc7a3.mp4
+| Nr. | Logo | App-Name | Description | Port |
+| :---: | :---: | :-- | :-- | :---: |
+| 1 | <img height="30" src="https://raw.githubusercontent.com/bookorbit/bookorbit/main/docs/images/bookorbit-icon.png" /> | [BookOrbit](https://github.com/bookorbit/bookorbit) | A self-hosted library for ebooks, comics and audiobooks, and the successor to BookLore | 6061 |
+
+## Adding an app
+
+1. Create a folder named `vedaant-<app-name>`. Every app ID must start with the store ID `vedaant` from `umbrel-app-store.yml`.
+2. Add the listing details shown in umbrelOS to `vedaant-<app-name>/umbrel-app.yml`.
+3. Add the Docker services to `vedaant-<app-name>/docker-compose.yml`.
+4. Add a row for the app to the table above.
