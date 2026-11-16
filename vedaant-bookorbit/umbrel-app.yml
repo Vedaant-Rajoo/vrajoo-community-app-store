@@ -11,7 +11,7 @@ name: BookOrbit
 tagline: Your self-hosted library for ebooks, comics and audiobooks
 icon: https://raw.githubusercontent.com/bookorbit/bookorbit/main/docs/images/bookorbit-icon.png
 category: files
-version: "3.6.0"
+version: "3.8.0"
 port: 6061
 description: >-
   BookOrbit is a self-hosted library and reading platform for ebooks, PDFs, audiobooks, and comics. It is the successor to BookLore.
@@ -38,10 +38,13 @@ gallery:
   - https://raw.githubusercontent.com/bookorbit/bookorbit/main/docs/images/ios-app-gallery.webp
   - https://raw.githubusercontent.com/bookorbit/bookorbit/main/docs/images/koreader-plugin-preview.webp
 releaseNotes: >-
-  Adds first-class comic and manga series support, Read Aloud book creation, and audiobook chapter editing.
+  Adds API keys for scripts, integrations and automations, so they can use the BookOrbit API without your account credentials.
 
 
-  Full release notes can be found at https://github.com/bookorbit/bookorbit/releases/tag/v3.6.0
+  Also includes everything from 3.7.0: merge duplicate books and link ebook and audiobook editions, set reading status for many books at once, square cover grids for smart scopes and collections, and rTorrent as a Book Requests download client.
+
+
+  Full release notes can be found at https://github.com/bookorbit/bookorbit/releases/tag/v3.8.0
 dependencies: []
 permissions:
   - STORAGE_DOWNLOADS
