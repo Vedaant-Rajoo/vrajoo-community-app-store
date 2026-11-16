@@ -1,0 +1,28 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      # The format here is: <app-id>_<docker-service-name>_1
+      APP_HOST: vedaant-suwayomi_server_1
+      APP_PORT: 4567
+      # Suwayomi has its own login; Mihon, OPDS readers and other clients need direct access.
+      PROXY_AUTH_ADD: "false"
+
+  server:
+    image: ghcr.io/suwayomi/suwayomi-server:v2.4.2366@sha256:1fac27c387dc2ea9949e1a01ad7f6d6de9d72d3988338a95476748e5c45c4582
+    restart: on-failure
+    environment:
+      # Login page for the browser; OPDS takes the same username and password as basic auth.
+      AUTH_MODE: simple_login
+      AUTH_USERNAME: umbrel
+      AUTH_PASSWORD: ${APP_PASSWORD}
+    volumes:
+      # Upstream asks for the downloads mount to come before the data mount.
+      - ${UMBREL_ROOT}/data/storage/downloads/manga:/home/suwayomi/.local/share/Tachidesk/downloads
+      - ${APP_DATA_DIR}/data/app:/home/suwayomi/.local/share/Tachidesk
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    stop_grace_period: 30s
