@@ -13,6 +13,7 @@ This is my personal Umbrel Community App Store with apps I like that aren't in t
 | Nr. | Logo | App-Name | Description | Port |
 | :---: | :---: | :-- | :-- | :---: |
 | 1 | <img height="30" src="https://raw.githubusercontent.com/bookorbit/bookorbit/main/docs/images/bookorbit-icon.png" /> | [BookOrbit](https://github.com/bookorbit/bookorbit) | A self-hosted library for ebooks, comics and audiobooks, and the successor to BookLore | 6061 |
+| 2 | <img height="30" src="https://raw.githubusercontent.com/Suwayomi/Suwayomi-Server/master/server/src/main/resources/icon/faviconlogo.png" /> | [Suwayomi](https://github.com/Suwayomi/Suwayomi-Server) | A manga reader server that runs Mihon (Tachiyomi) extensions | 4568 |
 
 ## Adding an app
 

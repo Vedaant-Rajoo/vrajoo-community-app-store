@@ -1,0 +1,67 @@
+manifestVersion: 1
+id: vedaant-suwayomi
+folderAccess:
+  - id: umbrel-downloads:manga
+    name: Manga downloads
+    note: Where Suwayomi saves downloaded chapters. Chapters already downloaded to the old folder are not moved, so move them yourself if you want to keep them.
+    mounts:
+      - service: server
+        targetPath: /home/suwayomi/.local/share/Tachidesk/downloads
+environment:
+  - name: AUTH_USERNAME
+    services:
+      - server
+    default: umbrel
+    note: Username for the Suwayomi login, Mihon and OPDS readers. Change it here, not in Suwayomi's own settings, which are reset on every start.
+  - name: AUTH_PASSWORD
+    services:
+      - server
+    note: Password for the Suwayomi login. Leave unset to use the app password shown by umbrelOS. Don't use double quotes. Change it here, not in Suwayomi's own settings, which are reset on every start.
+  - name: AUTH_MODE
+    services:
+      - server
+    default: simple_login
+    options:
+      - simple_login
+      - basic_auth
+      - ui_login
+      - none
+    note: How Suwayomi asks for a login. Mihon must use the matching login mode. If you pick "none", turn on Umbrel login for this app so it is not left open.
+name: Suwayomi
+tagline: Self-hosted manga reader that runs Mihon (Tachiyomi) extensions
+icon: https://raw.githubusercontent.com/Suwayomi/Suwayomi-Server/master/server/src/main/resources/icon/faviconlogo.png
+category: media
+version: "2.4.2366"
+port: 4568
+description: >-
+  Suwayomi is a free and open source manga reader server that runs the same extensions as Mihon (Tachiyomi), so you get the same sources on your own server.
+
+
+  Browse and search sources, build a library with categories, get new chapters automatically, download chapters for offline reading, and track your reading on MyAnimeList, AniList, MangaUpdates and more. Backups are compatible with Mihon.
+
+
+  Read in the browser, in Mihon or its forks with the Suwayomi extension, or in any OPDS reader at /api/opds/v1.2.
+
+
+  Log in with the username "umbrel" and the app password shown by umbrelOS. Use the same details in Mihon (set the login mode to "Simple Login") and in OPDS readers. To change the username, password or login mode, use the app's settings in umbrelOS. Changes made in Suwayomi's own settings are reset on every start.
+
+
+  Downloaded chapters are saved to the "manga" folder inside Downloads in the Files app. You can pick a different folder from the app's settings in umbrelOS.
+
+
+  Some sources sit behind Cloudflare. To get past it, install FlareSolverr from the Umbrel App Store, then in Suwayomi's settings turn on FlareSolverr and set its URL to http://flaresolverr_server_1:8191.
+developer: Suwayomi
+website: https://suwayomi.org
+submitter: Vedaant
+submission: https://github.com/Vedaant-Rajoo/vrajoo-community-app-store
+repo: https://github.com/Suwayomi/Suwayomi-Server
+support: https://github.com/Suwayomi/Suwayomi-Server/issues
+gallery: []
+releaseNotes: >-
+  Full release notes can be found at https://github.com/Suwayomi/Suwayomi-Server/releases/tag/v2.4.2366
+dependencies: []
+permissions:
+  - STORAGE_DOWNLOADS
+path: ""
+defaultUsername: "umbrel"
+deterministicPassword: true
