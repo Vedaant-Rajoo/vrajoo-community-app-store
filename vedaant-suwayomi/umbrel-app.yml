@@ -11,27 +11,25 @@ environment:
   - name: AUTH_USERNAME
     services:
       - server
-    default: umbrel
-    note: Username for the Suwayomi login, Mihon and OPDS readers. Change it here, not in Suwayomi's own settings, which are reset on every start.
+    note: Leave unset to manage the username in Suwayomi's own settings. A value set here replaces it on every start.
   - name: AUTH_PASSWORD
     services:
       - server
-    note: Password for the Suwayomi login. Leave unset to use the app password shown by umbrelOS. Don't use double quotes. Change it here, not in Suwayomi's own settings, which are reset on every start.
+    note: Leave unset to manage the password in Suwayomi's own settings. A value set here replaces it on every start, so use it to get back in if you forget the password. Don't use double quotes.
   - name: AUTH_MODE
     services:
       - server
-    default: simple_login
     options:
       - simple_login
       - basic_auth
       - ui_login
       - none
-    note: How Suwayomi asks for a login. Mihon must use the matching login mode. If you pick "none", turn on Umbrel login for this app so it is not left open.
+    note: Leave unset to manage the login mode in Suwayomi's own settings. A value set here replaces it on every start. If you pick "none", turn on Umbrel login for this app so it is not left open.
 name: Suwayomi
 tagline: Self-hosted manga reader that runs Mihon (Tachiyomi) extensions
 icon: https://raw.githubusercontent.com/Suwayomi/Suwayomi-Server/master/server/src/main/resources/icon/faviconlogo.png
 category: media
-version: "2.4.2366"
+version: "2.4.2366-beta.1"
 port: 4568
 description: >-
   Suwayomi is a free and open source manga reader server that runs the same extensions as Mihon (Tachiyomi), so you get the same sources on your own server.
@@ -43,7 +41,7 @@ description: >-
   Read in the browser, in Mihon or its forks with the Suwayomi extension, or in any OPDS reader at /api/opds/v1.2.
 
 
-  Log in with the username "umbrel" and the app password shown by umbrelOS. Use the same details in Mihon (set the login mode to "Simple Login") and in OPDS readers. To change the username, password or login mode, use the app's settings in umbrelOS. Changes made in Suwayomi's own settings are reset on every start.
+  Log in with the username "umbrel" and the app password shown by umbrelOS. Use the same details in Mihon (set the login mode to "Simple Login") and in OPDS readers. You can change the username, password and login mode in Suwayomi's own settings. umbrelOS keeps showing the original password. If you get locked out, set a new username and password in the app's settings in umbrelOS.
 
 
   Downloaded chapters are saved to the "manga" folder inside Downloads in the Files app. You can pick a different folder from the app's settings in umbrelOS.
@@ -58,6 +56,9 @@ repo: https://github.com/Suwayomi/Suwayomi-Server
 support: https://github.com/Suwayomi/Suwayomi-Server/issues
 gallery: []
 releaseNotes: >-
+  The login mode, username and password you set in Suwayomi's own settings are now kept when the app restarts.
+
+
   Full release notes can be found at https://github.com/Suwayomi/Suwayomi-Server/releases/tag/v2.4.2366
 dependencies: []
 permissions:

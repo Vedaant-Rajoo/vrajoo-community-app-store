@@ -13,10 +13,17 @@ services:
     image: ghcr.io/suwayomi/suwayomi-server:v2.4.2366@sha256:1fac27c387dc2ea9949e1a01ad7f6d6de9d72d3988338a95476748e5c45c4582
     restart: on-failure
     environment:
-      # Login page for the browser; OPDS takes the same username and password as basic auth.
-      AUTH_MODE: simple_login
-      AUTH_USERNAME: umbrel
-      AUTH_PASSWORD: ${APP_PASSWORD}
+      APP_PASSWORD: ${APP_PASSWORD}
+    # The image writes every AUTH_* variable into server.conf on each start, which wipes login changes made in Suwayomi's settings.
+    # So the defaults go in on the first start only. AUTH_* values set in umbrelOS app settings still apply on every start.
+    command:
+      - sh
+      - -c
+      - |
+        if [ ! -f /home/suwayomi/.local/share/Tachidesk/server.conf ]; then
+          export AUTH_MODE="$${AUTH_MODE:-simple_login}" AUTH_USERNAME="$${AUTH_USERNAME:-umbrel}" AUTH_PASSWORD="$${AUTH_PASSWORD:-$$APP_PASSWORD}"
+        fi
+        exec /home/suwayomi/startup_script.sh
     volumes:
       # Upstream asks for the downloads mount to come before the data mount.
       - ${UMBREL_ROOT}/data/storage/downloads/manga:/home/suwayomi/.local/share/Tachidesk/downloads
